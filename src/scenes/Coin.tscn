@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://e4f5a6b7c8d9"]
+
+[ext_resource type="Script" path="res://src/scripts/Coin.gd" id="1_coin"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 15.0
+
+[node name="Coin" type="Area2D"]
+script = ExtResource("1_coin")
+coin_value = 5
+rotation_speed = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")
+
+[node name="Sprite2D" type="Polygon2D" parent="."]
+color = Color(1, 0.84, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+

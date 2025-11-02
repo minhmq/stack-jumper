@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2d3e4f5a6b7"]
+
+[ext_resource type="Script" path="res://src/scripts/Player.gd" id="1_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(40, 50)
+
+[sub_resource type="AudioStream" id="AudioStream_1"]
+# Placeholder - will need actual sound file
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_player")
+move_speed = 0.0
+jump_force = 600.0
+double_jump_enabled = true
+coyote_time_ms = 150.0
+jump_buffer_ms = 100.0
+gravity = 1500.0
+max_fall_speed = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="Sprite2D" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+color = Color(1, 0.3, 0.5, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStream_1")
+

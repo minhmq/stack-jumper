@@ -1,0 +1,58 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Stack Jumper"
+config/description="A vertical jumping platform game for mobile"
+run/main_scene="res://src/scenes/Main.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://assets/icons/icon.png"
+
+[autoload]
+
+GameState="*res://src/autoload/GameState.gd"
+Save="*res://src/autoload/Save.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[input]
+
+ui_tap={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+, Object(InputEventScreenTouch,"resource_local_to_scene":false,"resource_name":"","device":-1,"index":0,"position":Vector2(0, 0),"pressure":0.0,"pen_inverted":false,"canceled":false,"pressed":true,"script":null)
+]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+2d/sleep_threshold_linear=2.0
+2d/sleep_threshold_angular=0.139626
+2d/default_gravity=1500
+2d/default_gravity_vector=Vector2(0, 1)
+2d/default_linear_damping=0.0
+2d/default_angular_damping=1.0
+
+[rendering]
+
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
+textures/canvas_textures/default_texture_filter=2
+anti_aliasing/quality/msaa_2d=1
+

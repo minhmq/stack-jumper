@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://f5a6b7c8d9e0"]
+
+[ext_resource type="Script" path="res://src/scripts/PlatformSpawner.gd" id="1_spawner"]
+[ext_resource type="PackedScene" uid="uid://d3e4f5a6b7c8" path="res://src/scenes/Platform.tscn" id="2_platform"]
+[ext_resource type="PackedScene" uid="uid://e4f5a6b7c8d9" path="res://src/scenes/Coin.tscn" id="3_coin"]
+
+[node name="PlatformSpawner" type="Node2D"]
+script = ExtResource("1_spawner")
+platform_scene = ExtResource("2_platform")
+coin_scene = ExtResource("3_coin")
+initial_spawn_y = 500.0
+min_gap_y = 120.0
+max_gap_y = 220.0
+base_platform_width = 240.0
+min_platform_width = 120.0
+base_platform_speed = 40.0
+max_platform_speed = 180.0
+
